@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { ChevronDown, Vote, Users } from "lucide-react";
+import { ChevronDown, MessageCircle, Eye } from "lucide-react";
 import candidatePhoto from "@/assets/candidate-photo.jpg";
 import bnpLogo from "@/assets/bnp-logo.webp";
 
@@ -84,14 +84,18 @@ export const HeroSection = () => {
               transition={{ delay: 0.7 }}
               className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
             >
-              <Button variant="hero" size="xl" className="group">
-                <Vote className="group-hover:animate-pulse" />
-                ধানের শীষে ভোট দিন
-              </Button>
-              <Button variant="heroOutline" size="xl">
-                <Users />
-                আমাদের সাথে যোগ দিন
-              </Button>
+              <a href="#advice">
+                <Button variant="hero" size="xl" className="group">
+                  <MessageCircle className="group-hover:animate-pulse" />
+                  পরামর্শ দিন
+                </Button>
+              </a>
+              <a href="#vision">
+                <Button variant="heroOutline" size="xl">
+                  <Eye />
+                  লালমনিরহাটের ভিশন
+                </Button>
+              </a>
             </motion.div>
 
             <motion.div
@@ -101,7 +105,7 @@ export const HeroSection = () => {
               className="mt-8 flex items-center justify-center lg:justify-start gap-8"
             >
               <div className="text-center">
-                <p className="text-3xl font-bold text-accent">20+</p>
+                <p className="text-3xl font-bold text-accent">30+</p>
                 <p className="text-sm text-white/70">বছরের রাজনৈতিক অভিজ্ঞতা</p>
               </div>
               <div className="w-px h-12 bg-white/30" />
