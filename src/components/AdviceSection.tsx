@@ -4,6 +4,7 @@ import { useRef, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Send, MessageCircle, CheckCircle } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+import { supabase } from "@/integrations/supabase/client";
 
 export const AdviceSection = () => {
   const ref = useRef(null);
@@ -27,23 +28,50 @@ export const AdviceSection = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    
+    // Validate all fields are filled
+    if (!formData.name.trim() || !formData.phone.trim() || !formData.area || !formData.message.trim()) {
+      toast({
+        title: "ত্রুটি!",
+        description: "সকল ফিল্ড পূরণ করা আবশ্যক।",
+        variant: "destructive",
+      });
+      return;
+    }
+    
     setIsSubmitting(true);
 
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 1500));
+    try {
+      const { error } = await supabase.from("advices").insert({
+        name: formData.name.trim(),
+        phone: formData.phone.trim(),
+        area: formData.area,
+        message: formData.message.trim(),
+      });
 
-    setIsSubmitting(false);
-    setIsSubmitted(true);
-    toast({
-      title: "ধন্যবাদ!",
-      description: "আপনার পরামর্শ সফলভাবে জমা হয়েছে।",
-    });
+      if (error) throw error;
 
-    // Reset form after 3 seconds
-    setTimeout(() => {
-      setFormData({ name: "", phone: "", area: "", message: "" });
-      setIsSubmitted(false);
-    }, 3000);
+      setIsSubmitted(true);
+      toast({
+        title: "ধন্যবাদ!",
+        description: "আপনার পরামর্শ সফলভাবে জমা হয়েছে।",
+      });
+
+      // Reset form after 3 seconds
+      setTimeout(() => {
+        setFormData({ name: "", phone: "", area: "", message: "" });
+        setIsSubmitted(false);
+      }, 3000);
+    } catch (error) {
+      console.error("Error submitting advice:", error);
+      toast({
+        title: "ত্রুটি!",
+        description: "পরামর্শ জমা দিতে সমস্যা হয়েছে। আবার চেষ্টা করুন।",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
