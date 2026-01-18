@@ -51,25 +51,31 @@ export const Navbar = () => {
           </button>
         </div>
 
-        {/* Mobile Navigation */}
+        {/* Mobile Navigation - Full Screen */}
         <AnimatePresence>
           {isOpen && (
             <motion.div
-              initial={{ opacity: 0, height: 0 }}
-              animate={{ opacity: 1, height: "auto" }}
-              exit={{ opacity: 0, height: 0 }}
-              className="md:hidden overflow-hidden"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              className="md:hidden fixed inset-0 top-16 bg-white z-40"
             >
-              <div className="py-4 space-y-2">
-                {navLinks.map((link) => (
-                  <a
+              <div className="flex flex-col items-center justify-center h-full space-y-6 pb-20">
+                {navLinks.map((link, index) => (
+                  <motion.a
                     key={link.href}
                     href={link.href}
                     onClick={() => setIsOpen(false)}
-                    className="block py-3 px-4 text-foreground/80 hover:text-primary hover:bg-muted rounded-lg font-medium transition-all"
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: index * 0.1 }}
+                    className="text-2xl font-bold text-foreground hover:text-primary transition-colors"
                   >
                     {link.name}
-                  </a>
+                    <span className="block text-sm font-normal text-muted-foreground">
+                      {link.nameEn}
+                    </span>
+                  </motion.a>
                 ))}
               </div>
             </motion.div>
