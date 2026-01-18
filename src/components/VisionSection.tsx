@@ -1,0 +1,135 @@
+import { motion } from "framer-motion";
+import { useInView } from "framer-motion";
+import { useRef } from "react";
+import {
+  GraduationCap,
+  Stethoscope,
+  Wheat,
+  Building2,
+  Droplets,
+  Lightbulb,
+} from "lucide-react";
+
+const visionItems = [
+  {
+    icon: GraduationCap,
+    title: "শিক্ষা",
+    titleEn: "Education",
+    description:
+      "প্রতিটি শিশুর জন্য মানসম্মত শিক্ষা নিশ্চিত করা। নতুন স্কুল, কলেজ ও বৃত্তি প্রোগ্রাম চালু করা হবে।",
+    color: "from-primary to-primary/70",
+  },
+  {
+    icon: Stethoscope,
+    title: "স্বাস্থ্য",
+    titleEn: "Healthcare",
+    description:
+      "গ্রাম ও শহরে স্বাস্থ্যসেবা সহজলভ্য করা। হাসপাতাল আধুনিকীকরণ ও বিনামূল্যে চিকিৎসা সেবা।",
+    color: "from-secondary to-secondary/70",
+  },
+  {
+    icon: Wheat,
+    title: "কৃষি উন্নয়ন",
+    titleEn: "Agriculture",
+    description:
+      "কৃষকদের জন্য ভর্তুকি, আধুনিক প্রযুক্তি ও ন্যায্য মূল্য নিশ্চিত করা।",
+    color: "from-accent to-amber-400",
+  },
+  {
+    icon: Building2,
+    title: "অবকাঠামো",
+    titleEn: "Infrastructure",
+    description:
+      "রাস্তা-ঘাট, ব্রিজ ও যোগাযোগ ব্যবস্থার উন্নয়ন। গ্রামীণ এলাকায় আধুনিক সুবিধা।",
+    color: "from-primary to-secondary",
+  },
+  {
+    icon: Droplets,
+    title: "বিশুদ্ধ পানি",
+    titleEn: "Clean Water",
+    description:
+      "প্রতিটি পরিবারে বিশুদ্ধ পানি সরবরাহ। টিউবওয়েল ও ফিল্টার প্লান্ট স্থাপন।",
+    color: "from-blue-500 to-blue-400",
+  },
+  {
+    icon: Lightbulb,
+    title: "বিদ্যুৎ",
+    titleEn: "Electricity",
+    description:
+      "নিরবচ্ছিন্ন বিদ্যুৎ সরবরাহ। সৌর বিদ্যুৎ প্রকল্প ও নবায়নযোগ্য শক্তির ব্যবহার।",
+    color: "from-amber-500 to-yellow-400",
+  },
+];
+
+export const VisionSection = () => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-100px" });
+
+  return (
+    <section id="vision" className="py-20 md:py-32 bg-muted/50">
+      <div className="container mx-auto px-4">
+        {/* Header */}
+        <motion.div
+          ref={ref}
+          initial={{ opacity: 0, y: 30 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-16"
+        >
+          <span className="inline-block px-4 py-2 bg-secondary/10 text-secondary rounded-full text-sm font-semibold mb-4">
+            আমাদের ভিশন
+          </span>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-foreground mb-6">
+            উন্নত লালমনিরহাট
+            <span className="block text-primary mt-2">সমৃদ্ধ বাংলাদেশ</span>
+          </h2>
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            আমাদের লক্ষ্য হলো প্রতিটি নাগরিকের জন্য সুন্দর ভবিষ্যৎ গড়ে তোলা।
+            নিচে আমাদের প্রধান উন্নয়ন পরিকল্পনাগুলো দেখুন।
+          </p>
+        </motion.div>
+
+        {/* Vision Grid */}
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+          {visionItems.map((item, index) => (
+            <motion.div
+              key={item.title}
+              initial={{ opacity: 0, y: 30 }}
+              animate={isInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.5, delay: 0.1 * index }}
+              className="group relative bg-card rounded-2xl p-6 shadow-card hover:shadow-xl transition-all duration-300 overflow-hidden"
+            >
+              {/* Background gradient on hover */}
+              <div
+                className={`absolute inset-0 bg-gradient-to-br ${item.color} opacity-0 group-hover:opacity-5 transition-opacity duration-300`}
+              />
+
+              {/* Icon */}
+              <div
+                className={`inline-flex p-4 rounded-xl bg-gradient-to-br ${item.color} text-white mb-4 shadow-lg`}
+              >
+                <item.icon className="w-6 h-6" />
+              </div>
+
+              {/* Content */}
+              <h3 className="text-xl font-bold text-foreground mb-1">
+                {item.title}
+              </h3>
+              <p className="text-sm text-muted-foreground mb-3">
+                {item.titleEn}
+              </p>
+              <p className="text-muted-foreground leading-relaxed">
+                {item.description}
+              </p>
+
+              {/* Decorative corner */}
+              <div
+                className={`absolute -bottom-10 -right-10 w-32 h-32 bg-gradient-to-br ${item.color} opacity-10 rounded-full blur-2xl group-hover:opacity-20 transition-opacity`}
+              />
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
