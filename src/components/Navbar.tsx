@@ -58,24 +58,18 @@ export const Navbar = () => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              className="md:hidden fixed inset-0 top-16 bg-white z-40"
+              className="md:hidden fixed inset-0 top-16 bg-white/95 backdrop-blur-md z-40 overflow-hidden"
             >
-              <div className="flex flex-col items-center justify-center h-full space-y-6 pb-20">
-                {navLinks.map((link, index) => (
-                  <motion.a
+              <div className="flex flex-col items-center justify-center h-full space-y-4">
+                {navLinks.map((link) => (
+                  <a
                     key={link.href}
                     href={link.href}
                     onClick={() => setIsOpen(false)}
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: index * 0.1 }}
-                    className="text-2xl font-bold text-foreground hover:text-primary transition-colors"
+                    className="py-3 px-6 text-xl font-medium text-foreground/80 hover:text-primary transition-colors"
                   >
                     {link.name}
-                    <span className="block text-sm font-normal text-muted-foreground">
-                      {link.nameEn}
-                    </span>
-                  </motion.a>
+                  </a>
                 ))}
               </div>
             </motion.div>
