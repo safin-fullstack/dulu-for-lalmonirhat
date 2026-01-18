@@ -63,7 +63,7 @@ export const AboutSection = () => {
 
               {/* Experience badge */}
               <div className="absolute -bottom-6 -right-6 bg-secondary text-secondary-foreground p-6 rounded-2xl shadow-xl">
-                <p className="text-4xl font-bold">20+</p>
+                <p className="text-4xl font-bold">30+</p>
                 <p className="text-sm">বছরের অভিজ্ঞতা</p>
               </div>
             </div>
@@ -88,7 +88,7 @@ export const AboutSection = () => {
 
             <p className="text-muted-foreground text-lg leading-relaxed mb-6">
               আসাদুল হাবিব দুলু লালমনিরহাট সদর-৩ আসনে বাংলাদেশ জাতীয়তাবাদী দলের
-              (বিএনপি) প্রার্থী। তিনি দীর্ঘ ২০ বছরেরও বেশি সময় ধরে রাজনীতিতে
+              (বিএনপি) প্রার্থী। তিনি দীর্ঘ ৩০ বছরেরও বেশি সময় ধরে রাজনীতিতে
               সক্রিয় আছেন এবং জনগণের অধিকার আদায়ে সর্বদা সোচ্চার থেকেছেন।
             </p>
 

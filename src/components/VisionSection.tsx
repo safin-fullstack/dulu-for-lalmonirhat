@@ -8,9 +8,36 @@ import {
   Building2,
   Droplets,
   Lightbulb,
+  Waves,
+  Laptop,
+  Briefcase,
 } from "lucide-react";
 
 const visionItems = [
+  {
+    icon: Waves,
+    title: "তিস্তা নদী বাঁচাও",
+    titleEn: "Save Tista River",
+    description:
+      "তিস্তা নদীর পানির ন্যায্য হিস্যা আদায়, নদী খনন ও বন্যা নিয়ন্ত্রণ বাঁধ নির্মাণ। তিস্তা চুক্তি বাস্তবায়নে জোরালো আন্দোলন।",
+    color: "from-blue-600 to-cyan-500",
+  },
+  {
+    icon: Laptop,
+    title: "প্রযুক্তি উন্নয়ন",
+    titleEn: "Tech Development",
+    description:
+      "ডিজিটাল বাংলাদেশ গড়তে আইটি হাব স্থাপন, ফ্রিল্যান্সিং প্রশিক্ষণ ও স্মার্ট গ্রাম প্রকল্প বাস্তবায়ন।",
+    color: "from-violet-600 to-purple-500",
+  },
+  {
+    icon: Briefcase,
+    title: "কর্মসংস্থান",
+    titleEn: "Employment",
+    description:
+      "যুবকদের জন্য কর্মসংস্থান সৃষ্টি, শিল্প-কারখানা স্থাপন ও ক্ষুদ্র উদ্যোক্তাদের ঋণ সুবিধা।",
+    color: "from-emerald-600 to-green-500",
+  },
   {
     icon: GraduationCap,
     title: "শিক্ষা",
