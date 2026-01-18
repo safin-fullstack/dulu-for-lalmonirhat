@@ -21,7 +21,7 @@ export const Navbar = () => {
           {/* Logo */}
           <a href="#home" className="flex items-center gap-3">
             <img src={bnpLogo} alt="BNP Logo" className="h-10 md:h-12 w-auto" />
-            <div className="hidden sm:block">
+            <div>
               <p className="text-sm font-bold text-primary">বাংলাদেশ জাতীয়তাবাদী দল</p>
               <p className="text-xs text-muted-foreground">লালমনিরহাট সদর-৩</p>
             </div>
