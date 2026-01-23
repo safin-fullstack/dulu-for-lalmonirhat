@@ -24,7 +24,7 @@ const visionItems = [
   },
   {
     icon: Laptop,
-    title: "প্রযুক্তি উন্নয়ন",
+    title: "ডিজিটাল লালমনিরহাট - প্রযুক্তি উন্নয়ন",
     titleEn: "Tech Development",
     description:
       "ডিজিটাল বাংলাদেশ গড়তে আইটি হাব স্থাপন, ফ্রিল্যান্সিং প্রশিক্ষণ ও স্মার্ট গ্রাম প্রকল্প বাস্তবায়ন।",
@@ -32,7 +32,7 @@ const visionItems = [
   },
   {
     icon: Briefcase,
-    title: "কর্মসংস্থান",
+    title: "কর্মসংস্থান ও যুব উন্নয়ন",
     titleEn: "Employment",
     description:
       "যুবকদের জন্য কর্মসংস্থান সৃষ্টি, শিল্প-কারখানা স্থাপন ও ক্ষুদ্র উদ্যোক্তাদের ঋণ সুবিধা।",
@@ -40,7 +40,7 @@ const visionItems = [
   },
   {
     icon: GraduationCap,
-    title: "শিক্ষা",
+    title: "শিক্ষা ও ভবিষ্যত",
     titleEn: "Education",
     description:
       "প্রতিটি শিশুর জন্য মানসম্মত শিক্ষা নিশ্চিত করা। নতুন স্কুল, কলেজ ও বৃত্তি প্রোগ্রাম চালু করা হবে।",
@@ -48,7 +48,7 @@ const visionItems = [
   },
   {
     icon: Stethoscope,
-    title: "স্বাস্থ্য",
+    title: "স্বাস্থ্যসেবা ও চিকিৎসা",
     titleEn: "Healthcare",
     description:
       "গ্রাম ও শহরে স্বাস্থ্যসেবা সহজলভ্য করা। হাসপাতাল আধুনিকীকরণ ও বিনামূল্যে চিকিৎসা সেবা।",
@@ -56,7 +56,7 @@ const visionItems = [
   },
   {
     icon: Wheat,
-    title: "কৃষি উন্নয়ন",
+    title: "কৃষক ও কৃষি অর্থনীতি",
     titleEn: "Agriculture",
     description:
       "কৃষকদের জন্য ভর্তুকি, আধুনিক প্রযুক্তি ও ন্যায্য মূল্য নিশ্চিত করা।",
@@ -64,7 +64,7 @@ const visionItems = [
   },
   {
     icon: Building2,
-    title: "অবকাঠামো",
+    title: "যোগাযোগ, বন্দর ও অর্থনৈতিক সম্ভাবনা",
     titleEn: "Infrastructure",
     description:
       "রাস্তা-ঘাট, ব্রিজ ও যোগাযোগ ব্যবস্থার উন্নয়ন। গ্রামীণ এলাকায় আধুনিক সুবিধা।",
@@ -72,16 +72,24 @@ const visionItems = [
   },
   {
     icon: Droplets,
-    title: "বিশুদ্ধ পানি",
-    titleEn: "Clean Water",
+    title: "শহর-গ্রাম অবকাঠামো ও পরিকল্পিত নগরায়ন",
+    titleEn: "",
     description:
       "প্রতিটি পরিবারে বিশুদ্ধ পানি সরবরাহ। টিউবওয়েল ও ফিল্টার প্লান্ট স্থাপন।",
     color: "from-blue-500 to-blue-400",
   },
   {
     icon: Lightbulb,
-    title: "বিদ্যুৎ",
-    titleEn: "Electricity",
+    title: "সুশাসন ও নাগরিক অধিকার",
+    titleEn: "",
+    description:
+      "নিরবচ্ছিন্ন বিদ্যুৎ সরবরাহ। সৌর বিদ্যুৎ প্রকল্প ও নবায়নযোগ্য শক্তির ব্যবহার।",
+    color: "from-amber-500 to-yellow-400",
+  },
+  {
+    icon: Lightbulb,
+    title: "নারী ও সামাজিক নিরাপত্তা",
+    titleEn: "women empowerment",
     description:
       "নিরবচ্ছিন্ন বিদ্যুৎ সরবরাহ। সৌর বিদ্যুৎ প্রকল্প ও নবায়নযোগ্য শক্তির ব্যবহার।",
     color: "from-amber-500 to-yellow-400",
@@ -104,7 +112,7 @@ export const VisionSection = () => {
           className="text-center mb-16"
         >
           <span className="inline-block px-4 py-2 bg-secondary/10 text-secondary rounded-full text-sm font-semibold mb-4">
-            আমাদের ভিশন
+            আলোকিত লালমনিরহাট
           </span>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-foreground mb-6">
             উন্নত লালমনিরহাট

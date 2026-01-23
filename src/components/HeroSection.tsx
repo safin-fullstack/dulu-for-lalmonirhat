@@ -93,7 +93,7 @@ export const HeroSection = () => {
               <a href="#vision">
                 <Button variant="heroOutline" size="xl">
                   <Eye />
-                  লালমনিরহাটের ভিশন
+                  আলোকিত লালমনিরহাট
                 </Button>
               </a>
             </motion.div>
@@ -105,17 +105,14 @@ export const HeroSection = () => {
               className="mt-8 flex items-center justify-center lg:justify-start gap-8"
             >
               <div className="text-center">
-                <p className="text-3xl font-bold text-accent">30+</p>
+                <p className="text-3xl font-bold text-accent">50+</p>
                 <p className="text-sm text-white/70">বছরের রাজনৈতিক অভিজ্ঞতা</p>
               </div>
               <div className="w-px h-12 bg-white/30" />
-              <div className="text-center">
-                <p className="text-3xl font-bold text-accent">100K+</p>
-                <p className="text-sm text-white/70">সমর্থক</p>
-              </div>
+             
               <div className="w-px h-12 bg-white/30" />
               <div className="text-center">
-                <p className="text-3xl font-bold text-accent">50+</p>
+                <p className="text-3xl font-bold text-accent">100+</p>
                 <p className="text-sm text-white/70">সামাজিক কর্মসূচি</p>
               </div>
             </motion.div>

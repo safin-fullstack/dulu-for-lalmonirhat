@@ -7,23 +7,23 @@ import candidatePhoto from "@/assets/candidate-photo.jpg";
 const qualities = [
   {
     icon: Shield,
-    title: "সততা ও নিষ্ঠা",
-    description: "রাজনৈতিক জীবনে সর্বদা সততার পথে চলেছেন",
+    title: "রাজনীতির সূচনা",
+    description: "১৯৭৬ সালে বিপ্লবী ছাত্র মৈত্রীতে যুক্ত হয়ে তাঁর রাজনীতিতে পদার্পণ",
   },
   {
     icon: Heart,
-    title: "জনসেবা",
-    description: "সাধারণ মানুষের সেবায় সর্বদা নিবেদিত",
+    title: "শিক্ষাজীবন",
+    description: "আমবাড়ী সরকারি প্রাথমিক বিদ্যালয় থেকে শুরু করে রাজশাহী বিশ্ববিদ্যালয় থেকে স্নাতকোত্তর ডিগ্রি অর্জনের মাধ্যমে তিনি শিক্ষাজীবন সম্পন্ন করেন",
   },
   {
     icon: Users,
-    title: "জনগণের নেতা",
-    description: "জনগণের কাছাকাছি থেকে কাজ করার অভিজ্ঞতা",
+    title: "দলীয় অন্তর্ভুক্তি",
+    description: "বেগম খালেদা জিয়ার অনুপ্রেরণায় তিনি বাংলাদেশ জাতীয়তাবাদী দলে যুক্ত হয়ে সক্রিয় রাজনীতিতে আত্মনিয়োগ করেন",
   },
   {
     icon: Award,
-    title: "প্রমাণিত ট্র্যাক রেকর্ড",
-    description: "সামাজিক উন্নয়নে অসংখ্য সফল কার্যক্রম",
+    title: "সংসদীয় জীবন",
+    description: "১৯৯৬ ও ২০০১ সালে জাতীয় সংসদ সদস্য নির্বাচিত হয়ে তিনি মন্ত্রিত্বসহ গুরুত্বপূর্ণ রাষ্ট্রীয় দায়িত্ব পালন করেন",
   },
 ];
 
@@ -63,7 +63,7 @@ export const AboutSection = () => {
 
               {/* Experience badge */}
               <div className="absolute -bottom-6 -right-6 bg-secondary text-secondary-foreground p-6 rounded-2xl shadow-xl">
-                <p className="text-4xl font-bold">30+</p>
+                <p className="text-4xl font-bold">50+</p>
                 <p className="text-sm">বছরের অভিজ্ঞতা</p>
               </div>
             </div>
