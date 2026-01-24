@@ -112,7 +112,7 @@ export const VisionSection = () => {
       }}
     >
       {/* Overlay for better readability */}
-      <div className="absolute inset-0 bg-black/70"></div>
+      <div className="absolute inset-0 bg-black/30"></div>
       
       <div className="container mx-auto px-4 relative z-10">
         {/* Header */}
