@@ -101,8 +101,20 @@ export const VisionSection = () => {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="vision" className="py-20 md:py-32 bg-muted/50">
-      <div className="container mx-auto px-4">
+    <section 
+      id="vision" 
+      className="py-20 md:py-32 bg-muted/50 relative"
+      style={{
+        backgroundImage: "url('https://github.com/cyclicit/dulu-sir/blob/main/dsir4.jpg?raw=true')",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundAttachment: "fixed",
+      }}
+    >
+      {/* Overlay for better readability */}
+      <div className="absolute inset-0 bg-black/70"></div>
+      
+      <div className="container mx-auto px-4 relative z-10">
         {/* Header */}
         <motion.div
           ref={ref}
@@ -111,14 +123,14 @@ export const VisionSection = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <span className="inline-block px-4 py-2 bg-secondary/10 text-secondary rounded-full text-sm font-semibold mb-4">
+          <span className="inline-block px-4 py-2 bg-secondary/10 text-secondary rounded-full text-sm font-semibold mb-4 backdrop-blur-sm bg-white/10">
             আলোকিত লালমনিরহাট
           </span>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-foreground mb-6">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-white mb-6">
             উন্নত লালমনিরহাট
-            <span className="block text-primary mt-2">সমৃদ্ধ বাংলাদেশ</span>
+            <span className="block text-primary/90 mt-2">সমৃদ্ধ বাংলাদেশ</span>
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-lg text-white/90 max-w-2xl mx-auto">
             আমাদের লক্ষ্য হলো প্রতিটি নাগরিকের জন্য সুন্দর ভবিষ্যৎ গড়ে তোলা।
             নিচে আমাদের প্রধান উন্নয়ন পরিকল্পনাগুলো দেখুন।
           </p>
@@ -132,7 +144,7 @@ export const VisionSection = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: 0.1 * index }}
-              className="group relative bg-card rounded-2xl p-6 shadow-card hover:shadow-xl transition-all duration-300 overflow-hidden"
+              className="group relative bg-white/90 backdrop-blur-sm rounded-2xl p-6 shadow-card hover:shadow-xl transition-all duration-300 overflow-hidden hover:bg-white"
             >
               {/* Background gradient on hover */}
               <div

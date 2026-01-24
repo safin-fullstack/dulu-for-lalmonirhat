@@ -6,7 +6,7 @@ export const Footer = () => {
   return (
     <footer className="bg-gradient-to-b from-foreground to-foreground/95 text-background py-16">
       <div className="container mx-auto px-4">
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
+        <div className="mx-auto mb-12">
           {/* Logo & About */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
