@@ -53,7 +53,7 @@ export const HeroSection = () => {
               transition={{ delay: 0.4, duration: 0.6 }}
               className="text-4xl md:text-5xl lg:text-6xl font-display font-bold mb-2 leading-tight"
             >
-              আসাদুল হাবিব দুলু
+             অধ্যক্ষ আসাদুল হাবিব দুলু
             </motion.h1>
 
             <motion.p
