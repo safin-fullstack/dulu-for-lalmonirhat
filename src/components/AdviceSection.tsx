@@ -241,12 +241,12 @@ export const AdviceSection = () => {
                         <option value="moghalhat">মোগলহাট</option>
                         <option value="kulaghat">কুলাঘাট</option>
                         <option value="barobari">বড়বাড়ী</option>
-                        <option value="other">মহেন্দ্রনগর</option>
-                        <option value="other">হারাটি</option>
-                         <option value="other">খুনিয়াগাছ</option>
-                          <option value="other">রাজপুর</option>
-                           <option value="other">গোকুন্ডা</option>
-                            <option value="other">পঞ্চগ্রাম</option>
+                        <option value="5">মহেন্দ্রনগর</option>
+                        <option value="6">হারাটি</option>
+                         <option value="7">খুনিয়াগাছ</option>
+                          <option value="8">রাজপুর</option>
+                           <option value="9">গোকুন্ডা</option>
+                            <option value="10">পঞ্চগ্রাম</option>
                              
                        
                       </select>
