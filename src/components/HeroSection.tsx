@@ -105,7 +105,7 @@ export const HeroSection = () => {
               className="mt-8 flex items-center justify-center lg:justify-start gap-8"
             >
               <div className="text-center">
-                <p className="text-3xl font-bold text-accent">50+</p>
+                <p className="text-3xl font-bold text-accent">40+</p>
                 <p className="text-sm text-white/70">বছরের রাজনৈতিক অভিজ্ঞতা</p>
               </div>
               <div className="w-px h-12 bg-white/30" />

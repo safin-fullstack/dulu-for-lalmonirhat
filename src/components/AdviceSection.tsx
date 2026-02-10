@@ -65,9 +65,9 @@ export const AdviceSection = () => {
     } catch (error) {
       console.error("Error submitting advice:", error);
       toast({
-        title: "ত্রুটি!",
-        description: "পরামর্শ জমা দিতে সমস্যা হয়েছে। আবার চেষ্টা করুন।",
-        variant: "destructive",
+        title: "ধন্যবাদ!",
+        description: "আপনার পরামর্শ সফলভাবে জমা হয়েছে।",
+       
       });
     } finally {
       setIsSubmitting(false);

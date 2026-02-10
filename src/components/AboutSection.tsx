@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
-import { Award, Heart, Users, Shield } from "lucide-react";
+import { Award, Heart, Users, Shield, BookOpen, Users2, User, UserCheck } from "lucide-react";
 import candidatePhoto from "@/assets/candidate-photo.jpg";
 
 const qualities = [
@@ -63,7 +63,7 @@ export const AboutSection = () => {
 
               {/* Experience badge */}
               <div className="absolute -bottom-6 -right-6 bg-secondary text-secondary-foreground p-6 rounded-2xl shadow-xl">
-                <p className="text-4xl font-bold">50+</p>
+                <p className="text-4xl font-bold">40+</p>
                 <p className="text-sm">বছরের অভিজ্ঞতা</p>
               </div>
             </div>
@@ -124,6 +124,115 @@ export const AboutSection = () => {
             </div>
           </motion.div>
         </div>
+
+        {/* New Responsive Div - Added after existing content */}
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.8, delay: 0.6 }}
+          className="mt-16 md:mt-24"
+        >
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+            {/* Book Section */}
+            <div className="order-2 lg:order-1">
+              <div className="flex items-center gap-2 mb-4">
+                <BookOpen className="w-6 h-6 text-primary" />
+                <h3 className="text-2xl font-bold text-foreground">লেখনী</h3>
+              </div>
+              
+              <div className="p-6 rounded-2xl bg-card card-gradient shadow-card">
+                <div className="flex flex-col md:flex-row gap-6 items-center md:items-start">
+                  <div className="flex-shrink-0">
+                    <img 
+                      src="https://github.com/cyclicit/safin/blob/main/ddd.jpeg?raw=true" 
+                      alt="জাগো বাহে তিস্তা বাঁচাই"
+                      className="w-64 h-auto rounded-xl shadow-lg"
+                    />
+                  </div>
+                  <div>
+                    <h4 className="text-xl font-bold text-foreground mb-3">
+                      জাগো বাহে তিস্তা বাঁচাই
+                    </h4>
+                    <p className="text-muted-foreground mb-4 leading-relaxed">
+                      তিস্তা নদী রক্ষায় লেখা তাঁর গ্রন্থ, যা লালমনিরহাটের পরিবেশ 
+                      ও জীববৈচিত্র্য সংরক্ষণের প্রতি তাঁর অঙ্গীকারের প্রতিফলন। 
+                      এই বইয়ে তিনি তিস্তা নদীর ঐতিহাসিক গুরুত্ব, বর্তমান অবস্থা 
+                      এবং ভবিষ্যৎ রক্ষার উপায় নিয়ে গভীর আলোচনা করেছেন।
+                    </p>
+                    <div className="flex flex-wrap gap-2">
+                      <span className="inline-block px-3 py-1 bg-primary/10 text-primary text-sm rounded-full">
+                        পরিবেশ সংরক্ষণ
+                      </span>
+                      <span className="inline-block px-3 py-1 bg-secondary/10 text-secondary text-sm rounded-full">
+                        নদী রক্ষা
+                      </span>
+                      <span className="inline-block px-3 py-1 bg-primary/10 text-primary text-sm rounded-full">
+                        স্থানীয় ইতিহাস
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Voter Information */}
+            <div className="order-1 lg:order-2">
+              <div className="flex items-center gap-2 mb-4">
+                <Users2 className="w-6 h-6 text-primary" />
+                <h3 className="text-2xl font-bold text-foreground">
+                  লালমনিরহাট সদর-৩ আসনের ভোটার তথ্য
+                </h3>
+              </div>
+              
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                {/* Male Voters */}
+                <div className="text-center p-5 rounded-xl bg-gradient-to-br from-blue-50 to-blue-100 border border-blue-200 shadow-card hover:shadow-lg transition-shadow">
+                  <div className="inline-flex items-center justify-center w-12 h-12 bg-blue-100 rounded-full mb-3">
+                    <User className="w-6 h-6 text-blue-600" />
+                  </div>
+                  <div className="text-3xl font-bold text-blue-700 mb-2">
+                    ১,৫৪,১৬৭
+                  </div>
+                  <div className="text-lg font-semibold text-blue-800">
+                    পুরুষ ভোটার
+                  </div>
+                </div>
+                
+                {/* Female Voters */}
+                <div className="text-center p-5 rounded-xl bg-gradient-to-br from-pink-50 to-pink-100 border border-pink-200 shadow-card hover:shadow-lg transition-shadow">
+                  <div className="inline-flex items-center justify-center w-12 h-12 bg-pink-100 rounded-full mb-3">
+                    <UserCheck className="w-6 h-6 text-pink-600" />
+                  </div>
+                  <div className="text-3xl font-bold text-pink-700 mb-2">
+                    ১,৫৩,৮০১
+                  </div>
+                  <div className="text-lg font-semibold text-pink-800">
+                    মহিলা ভোটার
+                  </div>
+                </div>
+                
+                {/* Total Voters */}
+                <div className="text-center p-5 rounded-xl bg-gradient-to-br from-primary/10 to-primary/5 border border-primary/20 shadow-card hover:shadow-lg transition-shadow">
+                  <div className="inline-flex items-center justify-center w-12 h-12 bg-primary/20 rounded-full mb-3">
+                    <Users2 className="w-6 h-6 text-primary" />
+                  </div>
+                  <div className="text-3xl font-bold text-foreground mb-2">
+                    ৩,০৭,৯৭০
+                  </div>
+                  <div className="text-lg font-semibold text-foreground">
+                    মোট ভোটার
+                  </div>
+                </div>
+              </div>
+              
+              <div className="mt-6 p-4 bg-muted/50 rounded-xl">
+                <p className="text-center text-muted-foreground">
+                  <span className="font-semibold">সর্বশেষ হালনাগাদ:</span> নির্বাচন কমিশন কর্তৃক প্রকাশিত সর্বশেষ ভোটার তালিকা অনুযায়ী
+                </p>
+              </div>
+            </div>
+          </div>
+        </motion.div>
       </div>
     </section>
   );
