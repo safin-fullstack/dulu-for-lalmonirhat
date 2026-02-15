@@ -87,9 +87,7 @@ export const AboutSection = () => {
             </h2>
 
             <p className="text-muted-foreground text-lg leading-relaxed mb-6">
-              আসাদুল হাবিব দুলু লালমনিরহাট সদর-৩ আসনে বাংলাদেশ জাতীয়তাবাদী দলের
-              (বিএনপি) প্রার্থী। তিনি দীর্ঘ ৩০ বছরেরও বেশি সময় ধরে রাজনীতিতে
-              সক্রিয় আছেন এবং জনগণের অধিকার আদায়ে সর্বদা সোচ্চার থেকেছেন।
+              আসাদুল হাবিব দুলু লালমনিরহাট সদর-৩ আসনে 
             </p>
 
             <p className="text-muted-foreground text-lg leading-relaxed mb-8">

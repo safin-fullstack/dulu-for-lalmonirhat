@@ -141,14 +141,8 @@ export const DevelopmentSection = () => {
             <h3 className="text-2xl md:text-3xl font-bold mb-4">
               একসাথে গড়ব উন্নত লালমনিরহাট
             </h3>
-            <p className="text-white/90 text-lg mb-6 max-w-2xl mx-auto">
-              আপনার একটি ভোট পরিবর্তন আনতে পারে। ধানের শীষে ভোট দিয়ে উন্নয়নের
-              পথে এগিয়ে যান।
-            </p>
-            <div className="inline-flex items-center gap-2 px-6 py-3 bg-accent text-accent-foreground rounded-full font-bold text-lg shadow-xl">
-              <span>ধানের শীষ</span>
-              <span className="text-2xl">🌾</span>
-            </div>
+            
+            
           </div>
         </motion.div>
       </div>

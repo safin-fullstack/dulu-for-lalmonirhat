@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { ChevronDown, MessageCircle, Eye } from "lucide-react";
+import { ChevronDown, MessageCircle, Heart, Award, Users, Trophy } from "lucide-react";
 import candidatePhoto from "@/assets/candidate-photo.jpg";
 import bnpLogo from "@/assets/bnp-logo.webp";
 
@@ -8,16 +8,47 @@ export const HeroSection = () => {
   return (
     <section
       id="home"
-      className="relative min-h-screen flex items-center justify-center hero-gradient overflow-hidden pt-16"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16"
+      style={{
+        background: 'linear-gradient(135deg, #006A4E 0%, #008B5E 50%, #F42A41 100%)'
+      }}
     >
-      {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-10">
-        <div className="absolute top-20 left-10 w-32 h-32 border-4 border-white rounded-full" />
-        <div className="absolute bottom-40 right-20 w-24 h-24 border-4 border-white rounded-full" />
-        <div className="absolute top-1/2 left-1/4 w-16 h-16 bg-white/20 rotate-45" />
+      {/* Victory Celebration Elements */}
+      <div className="absolute inset-0 overflow-hidden">
+        {/* Floating particles */}
+        {[...Array(20)].map((_, i) => (
+          <motion.div
+            key={i}
+            className="absolute w-2 h-2 bg-white/30 rounded-full"
+            initial={{ 
+              x: Math.random() * window.innerWidth,
+              y: -20 
+            }}
+            animate={{ 
+              y: window.innerHeight + 20,
+              x: Math.random() * window.innerWidth
+            }}
+            transition={{ 
+              duration: 5 + Math.random() * 5,
+              repeat: Infinity,
+              delay: Math.random() * 5
+            }}
+          />
+        ))}
+        
+        {/* Victory ribbons */}
+        <div className="absolute -top-20 -left-20 w-64 h-64 bg-yellow-400/20 rounded-full blur-3xl" />
+        <div className="absolute -bottom-20 -right-20 w-64 h-64 bg-green-500/20 rounded-full blur-3xl" />
       </div>
 
-      <div className="container mx-auto px-4 py-12 md:py-20">
+      {/* Decorative pattern */}
+      <div className="absolute inset-0 opacity-10">
+        <div className="absolute top-20 left-10 w-32 h-32 border-4 border-white/40 rounded-full" />
+        <div className="absolute bottom-40 right-20 w-24 h-24 border-4 border-yellow-400/40 rounded-full" />
+        <div className="absolute top-1/3 right-1/4 w-16 h-16 bg-yellow-400/20 rotate-45" />
+      </div>
+
+      <div className="container mx-auto px-4 py-12 md:py-20 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Text Content */}
           <motion.div
@@ -26,34 +57,28 @@ export const HeroSection = () => {
             transition={{ duration: 0.8 }}
             className="text-white text-center lg:text-left order-2 lg:order-1"
           >
+            {/* Victory Badge */}
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2 }}
-              className="flex items-center justify-center lg:justify-start gap-3 mb-6"
+              initial={{ scale: 0 }}
+              animate={{ scale: 1 }}
+              transition={{ type: "spring", stiffness: 200, damping: 20 }}
+              className="inline-flex items-center gap-2 bg-yellow-400 text-green-900 px-4 py-2 rounded-full mb-6"
             >
-              <img src={bnpLogo} alt="BNP" className="h-12 w-auto" />
-              <span className="text-lg font-semibold text-white/90">
-                বাংলাদেশ জাতীয়তাবাদী দল
-              </span>
+              <Trophy className="w-5 h-5" />
+              <span className="font-bold">বিজয়ী ২০২৬</span>
             </motion.div>
 
-            <motion.p
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.3 }}
-              className="text-accent font-bold text-lg md:text-xl mb-2"
-            >
-              লালমনিরহাট সদর-৩ আসনে
-            </motion.p>
+           
 
             <motion.h1
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4, duration: 0.6 }}
-              className="text-4xl md:text-5xl lg:text-6xl font-display font-bold mb-2 leading-tight"
+              className="text-4xl md:text-5xl lg:text-7xl font-display font-bold mb-2 leading-tight"
             >
-             অধ্যক্ষ আসাদুল হাবিব দুলু
+              অধ্যক্ষ আসাদুল
+              <br />
+              <span className="text-yellow-300">হাবিব দুলু</span>
             </motion.h1>
 
             <motion.p
@@ -71,14 +96,14 @@ export const HeroSection = () => {
               transition={{ delay: 0.6 }}
               className="text-lg md:text-xl text-white/80 mb-8 max-w-lg mx-auto lg:mx-0"
             >
-              জনগণের জন্য লড়াই করেছেন, জনগণের পাশে থাকবেন সবসময়
+              জনগণের আস্থা, জনগণের বিজয়
               <br />
-              <span className="text-accent font-semibold">
-                ২০২৬ সালের নির্বাচনে আপনার ভোট চাই
+              <span className="text-yellow-300 font-semibold text-2xl">
+                "আলোকিত লালমনিরহাট গড়ার অঙ্গীকার"
               </span>
             </motion.p>
 
-            <motion.div
+           <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.7 }}
@@ -92,7 +117,7 @@ export const HeroSection = () => {
               </a>
               <a href="#vision">
                 <Button variant="heroOutline" size="xl">
-                  <Eye />
+                  
                   আলোকিত লালমনিরহাট
                 </Button>
               </a>
@@ -102,23 +127,25 @@ export const HeroSection = () => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.9 }}
-              className="mt-8 flex items-center justify-center lg:justify-start gap-8"
+              className="mt-12 grid grid-cols-2 md:grid-cols-4 gap-4 justify-center lg:justify-start my-4"
             >
-              <div className="text-center">
-                <p className="text-3xl font-bold text-accent">40+</p>
-                <p className="text-sm text-white/70">বছরের রাজনৈতিক অভিজ্ঞতা</p>
+              <div className="text-center bg-white/10 backdrop-blur-sm rounded-lg p-3">
+                <p className="text-2xl font-bold text-yellow-300">140000 +</p>
+                <p className="text-xs text-white/80">ভোট </p>
               </div>
-              <div className="w-px h-12 bg-white/30" />
-             
-              <div className="w-px h-12 bg-white/30" />
-              <div className="text-center">
-                <p className="text-3xl font-bold text-accent">100+</p>
-                <p className="text-sm text-white/70">সামাজিক কর্মসূচি</p>
+              <div className="text-center bg-white/10 backdrop-blur-sm rounded-lg p-3">
+                <p className="text-2xl font-bold text-yellow-300">৪০+</p>
+                <p className="text-xs text-white/80">বছরের অভিজ্ঞতা</p>
               </div>
+              <div className="text-center bg-white/10 backdrop-blur-sm rounded-lg p-3">
+                <p className="text-2xl font-bold text-yellow-300">১৫০+</p>
+                <p className="text-xs text-white/80">উন্নয়ন প্রকল্প</p>
+              </div>
+              
             </motion.div>
           </motion.div>
 
-          {/* Candidate Image */}
+          {/* Candidate Image with Victory Theme */}
           <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -126,12 +153,20 @@ export const HeroSection = () => {
             className="relative flex justify-center order-1 lg:order-2"
           >
             <div className="relative">
-              {/* Decorative rings */}
-              <div className="absolute inset-0 -m-4 border-4 border-white/20 rounded-full animate-pulse-slow" />
-              <div className="absolute inset-0 -m-8 border-2 border-accent/30 rounded-full" />
+              {/* Victory rings */}
+              <motion.div
+                animate={{ rotate: 360 }}
+                transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+                className="absolute inset-0 -m-12 border-4 border-yellow-400/30 rounded-full border-t-yellow-400 border-r-transparent border-b-transparent border-l-transparent"
+              />
+              <motion.div
+                animate={{ rotate: -360 }}
+                transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
+                className="absolute inset-0 -m-8 border-4 border-white/30 rounded-full border-b-white border-l-transparent border-r-transparent border-t-transparent"
+              />
 
               {/* Main image container */}
-              <div className="relative w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 rounded-full overflow-hidden border-8 border-white shadow-2xl">
+              <div className="relative w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 rounded-full overflow-hidden border-8 border-yellow-400 shadow-2xl">
                 <img
                   src={candidatePhoto}
                   alt="আসাদুল হাবিব দুলু"
@@ -139,14 +174,58 @@ export const HeroSection = () => {
                 />
               </div>
 
-              {/* Vote badge */}
+              {/* Victory badges */}
               <motion.div
-                animate={{ rotate: [0, 5, -5, 0] }}
+                animate={{ 
+                  scale: [1, 1.1, 1],
+                  rotate: [0, 5, -5, 0]
+                }}
                 transition={{ duration: 2, repeat: Infinity }}
-                className="absolute -bottom-4 -right-4 bg-accent text-accent-foreground px-6 py-3 rounded-full font-bold text-lg shadow-xl"
+                className="absolute -top-4 -right-4 bg-yellow-400 text-green-900 px-6 py-3 rounded-full font-bold text-lg shadow-xl flex items-center gap-2"
+              >
+                <Trophy className="w-5 h-5" />
+                বিজয়ী
+              </motion.div>
+
+              <motion.div
+                animate={{ 
+                  scale: [1, 1.2, 1],
+                }}
+                transition={{ duration: 2, repeat: Infinity, delay: 0.5 }}
+                className="absolute -bottom-4 -left-4 bg-white text-green-900 px-4 py-2 rounded-full font-bold shadow-xl"
               >
                 ধানের শীষ 🌾
               </motion.div>
+
+              {/* Floating celebration elements */}
+              {['🎉', '🎊', '🌾', '✨'].map((emoji, index) => (
+                <motion.div
+                  key={index}
+                  className="absolute text-2xl"
+                  initial={{ 
+                    x: 0, 
+                    y: 0,
+                    opacity: 0 
+                  }}
+                  animate={{ 
+                    x: [0, (index % 2 === 0 ? 50 : -50)],
+                    y: [-50, -100],
+                    opacity: [1, 0],
+                    rotate: [0, 360]
+                  }}
+                  transition={{ 
+                    duration: 3,
+                    repeat: Infinity,
+                    delay: index * 0.3
+                  }}
+                  style={{
+                    left: `${50 + (index * 20)}%`,
+                    top: '50%'
+                  }}
+                >
+                  {emoji}
+                </motion.div>
+              ))}
             </div>
           </motion.div>
         </div>
@@ -163,6 +242,8 @@ export const HeroSection = () => {
           </a>
         </motion.div>
       </div>
+
+     
     </section>
   );
 };

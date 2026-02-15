@@ -21,10 +21,11 @@ export const Navbar = () => {
           <div className="flex items-center justify-between h-16 md:h-20">
             {/* Logo */}
             <a href="#home" className="flex items-center gap-3">
-              <img src={bnpLogo} alt="BNP Logo" className="h-10 md:h-12 w-auto" />
+              
               <div>
-                <p className="text-sm font-bold text-primary">বাংলাদেশ জাতীয়তাবাদী দল</p>
-                <p className="text-xs text-muted-foreground">লালমনিরহাট সদর-৩</p>
+                <p className="text-sm font-bold text-primary ms-3">অধ্যক্ষ আসাদুল
+হাবিব দুলু</p>
+                <p className="text-xs text-muted-foreground ms-3">লালমনিরহাট</p>
               </div>
             </a>
 
