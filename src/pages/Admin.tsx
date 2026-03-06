@@ -10,7 +10,13 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
-import { Search, LogOut, Lock } from "lucide-react";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog";
+import { Search, LogOut, Lock, X } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 
 type Advice = {
@@ -30,6 +36,7 @@ const Admin = () => {
   const [loginLoading, setLoginLoading] = useState(false);
   const [advices, setAdvices] = useState<Advice[]>([]);
   const [searchPhone, setSearchPhone] = useState("");
+  const [selectedAdvice, setSelectedAdvice] = useState<Advice | null>(null);
   const { toast } = useToast();
 
   useEffect(() => {
@@ -155,7 +162,11 @@ const Admin = () => {
             </div>
           ) : (
             filteredAdvices.map((advice) => (
-              <div key={advice.id} className="bg-card rounded-xl border border-border p-4 space-y-2">
+              <div
+                key={advice.id}
+                onClick={() => setSelectedAdvice(advice)}
+                className="bg-card rounded-xl border border-border p-4 space-y-2 cursor-pointer hover:border-primary/50 transition-colors active:scale-[0.99]"
+              >
                 <div className="flex items-center justify-between">
                   <span className="font-semibold text-foreground">{advice.name}</span>
                   <span className="text-xs text-muted-foreground">
@@ -170,7 +181,7 @@ const Admin = () => {
                   <span className="text-muted-foreground">📍</span>
                   <span className="text-foreground">{advice.area}</span>
                 </div>
-                <p className="text-sm text-muted-foreground bg-muted/50 rounded-lg p-3">
+                <p className="text-sm text-muted-foreground bg-muted/50 rounded-lg p-3 line-clamp-2">
                   {advice.message}
                 </p>
               </div>
@@ -199,7 +210,11 @@ const Admin = () => {
                 </TableRow>
               ) : (
                 filteredAdvices.map((advice) => (
-                  <TableRow key={advice.id}>
+                  <TableRow
+                    key={advice.id}
+                    onClick={() => setSelectedAdvice(advice)}
+                    className="cursor-pointer"
+                  >
                     <TableCell className="font-medium">{advice.name}</TableCell>
                     <TableCell>{advice.phone}</TableCell>
                     <TableCell>{advice.area}</TableCell>
@@ -213,6 +228,41 @@ const Admin = () => {
             </TableBody>
           </Table>
         </div>
+
+        {/* Advice Detail Dialog */}
+        <Dialog open={!!selectedAdvice} onOpenChange={() => setSelectedAdvice(null)}>
+          <DialogContent className="max-w-lg">
+            <DialogHeader>
+              <DialogTitle className="text-lg">{selectedAdvice?.name}</DialogTitle>
+            </DialogHeader>
+            {selectedAdvice && (
+              <div className="space-y-4">
+                <div className="flex flex-wrap gap-4 text-sm">
+                  <div>
+                    <span className="text-muted-foreground">📞 ফোন: </span>
+                    <span className="font-medium text-foreground">{selectedAdvice.phone}</span>
+                  </div>
+                  <div>
+                    <span className="text-muted-foreground">📍 এলাকা: </span>
+                    <span className="font-medium text-foreground">{selectedAdvice.area}</span>
+                  </div>
+                  <div>
+                    <span className="text-muted-foreground">📅 তারিখ: </span>
+                    <span className="font-medium text-foreground">
+                      {new Date(selectedAdvice.created_at).toLocaleDateString("bn-BD")}
+                    </span>
+                  </div>
+                </div>
+                <div>
+                  <p className="text-sm text-muted-foreground mb-1">পরামর্শ:</p>
+                  <div className="bg-muted/50 rounded-lg p-4 text-foreground whitespace-pre-wrap">
+                    {selectedAdvice.message}
+                  </div>
+                </div>
+              </div>
+            )}
+          </DialogContent>
+        </Dialog>
       </div>
     </div>
   );
