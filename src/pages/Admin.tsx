@@ -86,14 +86,14 @@ const Admin = () => {
 
   if (!isAuthenticated) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-muted/30 px-4">
-        <div className="w-full max-w-md bg-card rounded-2xl shadow-card border border-border p-8">
-          <div className="text-center mb-8">
-            <div className="inline-flex p-4 bg-primary/10 rounded-full mb-4">
-              <Lock className="w-8 h-8 text-primary" />
+      <div className="min-h-screen flex items-center justify-center bg-muted/30 px-4 py-8">
+        <div className="w-full max-w-md bg-card rounded-2xl shadow-card border border-border p-6 sm:p-8">
+          <div className="text-center mb-6 sm:mb-8">
+            <div className="inline-flex p-3 sm:p-4 bg-primary/10 rounded-full mb-4">
+              <Lock className="w-6 h-6 sm:w-8 sm:h-8 text-primary" />
             </div>
-            <h1 className="text-2xl font-bold text-foreground">Admin Login</h1>
-            <p className="text-muted-foreground mt-2">Enter your credentials to continue</p>
+            <h1 className="text-xl sm:text-2xl font-bold text-foreground">Admin Login</h1>
+            <p className="text-muted-foreground mt-2 text-sm sm:text-base">Enter your credentials to continue</p>
           </div>
           <form onSubmit={handleLogin} className="space-y-4">
             <Input
@@ -121,32 +121,65 @@ const Admin = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      <header className="bg-card border-b border-border px-4 py-4">
-        <div className="container mx-auto flex items-center justify-between">
-          <h1 className="text-xl font-bold text-foreground">Admin Dashboard</h1>
-          <Button variant="outline" size="sm" onClick={handleLogout}>
-            <LogOut className="w-4 h-4 mr-2" /> Logout
+      <header className="bg-card border-b border-border px-3 sm:px-4 py-3 sm:py-4">
+        <div className="container mx-auto flex items-center justify-between gap-2">
+          <h1 className="text-base sm:text-xl font-bold text-foreground truncate">Admin Dashboard</h1>
+          <Button variant="outline" size="sm" onClick={handleLogout} className="shrink-0">
+            <LogOut className="w-4 h-4 mr-1 sm:mr-2" />
+            <span className="hidden sm:inline">Logout</span>
           </Button>
         </div>
       </header>
 
-      <div className="container mx-auto px-4 py-8">
-        <div className="flex items-center gap-4 mb-6">
-          <div className="relative flex-1 max-w-sm">
+      <div className="container mx-auto px-3 sm:px-4 py-4 sm:py-8">
+        <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4 mb-4 sm:mb-6">
+          <div className="relative flex-1">
             <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
             <Input
-              placeholder="Search by phone number..."
+              placeholder="ফোন নম্বর দিয়ে খুঁজুন..."
               value={searchPhone}
               onChange={(e) => setSearchPhone(e.target.value)}
               className="pl-10"
             />
           </div>
           <span className="text-sm text-muted-foreground">
-            {filteredAdvices.length} result(s)
+            {filteredAdvices.length} টি ফলাফল
           </span>
         </div>
 
-        <div className="bg-card rounded-xl border border-border overflow-hidden">
+        {/* Mobile card view */}
+        <div className="block md:hidden space-y-3">
+          {filteredAdvices.length === 0 ? (
+            <div className="text-center py-8 text-muted-foreground bg-card rounded-xl border border-border">
+              কোনো তথ্য পাওয়া যায়নি
+            </div>
+          ) : (
+            filteredAdvices.map((advice) => (
+              <div key={advice.id} className="bg-card rounded-xl border border-border p-4 space-y-2">
+                <div className="flex items-center justify-between">
+                  <span className="font-semibold text-foreground">{advice.name}</span>
+                  <span className="text-xs text-muted-foreground">
+                    {new Date(advice.created_at).toLocaleDateString("bn-BD")}
+                  </span>
+                </div>
+                <div className="flex items-center gap-2 text-sm">
+                  <span className="text-muted-foreground">📞</span>
+                  <span className="text-foreground">{advice.phone}</span>
+                </div>
+                <div className="flex items-center gap-2 text-sm">
+                  <span className="text-muted-foreground">📍</span>
+                  <span className="text-foreground">{advice.area}</span>
+                </div>
+                <p className="text-sm text-muted-foreground bg-muted/50 rounded-lg p-3">
+                  {advice.message}
+                </p>
+              </div>
+            ))
+          )}
+        </div>
+
+        {/* Desktop table view */}
+        <div className="hidden md:block bg-card rounded-xl border border-border overflow-hidden">
           <Table>
             <TableHeader>
               <TableRow>
@@ -161,7 +194,7 @@ const Admin = () => {
               {filteredAdvices.length === 0 ? (
                 <TableRow>
                   <TableCell colSpan={5} className="text-center py-8 text-muted-foreground">
-                    No data found
+                    কোনো তথ্য পাওয়া যায়নি
                   </TableCell>
                 </TableRow>
               ) : (
