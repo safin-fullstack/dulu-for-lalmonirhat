@@ -16,29 +16,10 @@ export const HeroSection = () => {
       {/* Victory Celebration Elements */}
       <div className="absolute inset-0 overflow-hidden">
         {/* Floating particles */}
-        {[...Array(20)].map((_, i) => (
-          <motion.div
-            key={i}
-            className="absolute w-2 h-2 bg-white/30 rounded-full"
-            initial={{ 
-              x: Math.random() * window.innerWidth,
-              y: -20 
-            }}
-            animate={{ 
-              y: window.innerHeight + 20,
-              x: Math.random() * window.innerWidth
-            }}
-            transition={{ 
-              duration: 5 + Math.random() * 5,
-              repeat: Infinity,
-              delay: Math.random() * 5
-            }}
-          />
-        ))}
+       
         
         {/* Victory ribbons */}
-        <div className="absolute -top-20 -left-20 w-64 h-64 bg-yellow-400/20 rounded-full blur-3xl" />
-        <div className="absolute -bottom-20 -right-20 w-64 h-64 bg-green-500/20 rounded-full blur-3xl" />
+  
       </div>
 
       {/* Decorative pattern */}
@@ -64,8 +45,8 @@ export const HeroSection = () => {
               transition={{ type: "spring", stiffness: 200, damping: 20 }}
               className="inline-flex items-center gap-2 bg-yellow-400 text-green-900 px-4 py-2 rounded-full mb-6"
             >
-              <Trophy className="w-5 h-5" />
-              <span className="font-bold">বিজয়ী ২০২৬</span>
+             
+              <span className="font-bold">মাননীয় মন্ত্রী দুর্যোগ ব্যবস্থাপনা ও ত্রাণ মন্ত্রণালয় </span>
             </motion.div>
 
            
@@ -184,7 +165,7 @@ export const HeroSection = () => {
                 className="absolute -top-4 -right-4 bg-yellow-400 text-green-900 px-6 py-3 rounded-full font-bold text-lg shadow-xl flex items-center gap-2"
               >
                 <Trophy className="w-5 h-5" />
-                বিজয়ী
+                মাননীয় মন্ত্রী
               </motion.div>
 
               <motion.div
@@ -198,34 +179,7 @@ export const HeroSection = () => {
               </motion.div>
 
               {/* Floating celebration elements */}
-              {['🎉', '🎊', '🌾', '✨'].map((emoji, index) => (
-                <motion.div
-                  key={index}
-                  className="absolute text-2xl"
-                  initial={{ 
-                    x: 0, 
-                    y: 0,
-                    opacity: 0 
-                  }}
-                  animate={{ 
-                    x: [0, (index % 2 === 0 ? 50 : -50)],
-                    y: [-50, -100],
-                    opacity: [1, 0],
-                    rotate: [0, 360]
-                  }}
-                  transition={{ 
-                    duration: 3,
-                    repeat: Infinity,
-                    delay: index * 0.3
-                  }}
-                  style={{
-                    left: `${50 + (index * 20)}%`,
-                    top: '50%'
-                  }}
-                >
-                  {emoji}
-                </motion.div>
-              ))}
+              
             </div>
           </motion.div>
         </div>

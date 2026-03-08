@@ -25,7 +25,9 @@ export const Navbar = () => {
               <div>
                 <p className="text-sm font-bold text-primary ms-3">অধ্যক্ষ আসাদুল
 হাবিব দুলু</p>
-                <p className="text-xs text-muted-foreground ms-3">লালমনিরহাট</p>
+
+<p className="text-xs text-muted-foreground ms-3">দুর্যোগ ব্যবস্থাপনা ও ত্রাণ মন্ত্রী</p>
+                <p className="text-xs text-muted-foreground ms-3">সংসদীয় আসন - লালমনিরহাট ৩</p>
               </div>
             </a>
 
