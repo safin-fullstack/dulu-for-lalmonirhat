@@ -45,13 +45,14 @@ export const DevelopmentSection = () => {
           transition={{ duration: 0.6 }}
           className="max-w-3xl mb-16"
         >
-          <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground mb-3">
-            উন্নয়ন
-          </p>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-foreground leading-tight">
-            অর্জিত সাফল্য ও আগামীর প্রতিশ্রুতি
+          <div className="flex items-center gap-3 mb-4">
+            <span className="h-px w-8 bg-accent" />
+            <p className="text-[11px] uppercase tracking-wider-2 gold-accent font-sans-pro">উন্নয়ন · Impact</p>
+          </div>
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-display text-foreground leading-[1.05]">
+            অর্জিত <span className="italic">সাফল্য</span> ও আগামীর প্রতিশ্রুতি
           </h2>
-          <div className="w-16 h-0.5 bg-foreground mt-6" />
+          <div className="w-16 h-px bg-foreground/40 mt-6" />
         </motion.div>
 
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20">
@@ -120,18 +121,19 @@ export const DevelopmentSection = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.8 }}
-          className="mt-20 md:mt-24 bg-foreground text-background p-10 md:p-16 text-center"
+          className="mt-20 md:mt-24 bg-foreground text-background p-10 md:p-20 text-center relative overflow-hidden"
         >
-          <p className="text-xs uppercase tracking-[0.3em] text-background/60 mb-6">
-            অঙ্গীকার
+          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-px bg-accent" />
+          <p className="text-[11px] uppercase tracking-wider-2 gold-accent mb-8 font-sans-pro">
+            অঙ্গীকার · Pledge
           </p>
-          <h3 className="text-2xl md:text-3xl lg:text-4xl font-display font-bold leading-snug max-w-3xl mx-auto">
-            "একটি দুর্যোগ-সহনশীল, প্রযুক্তিনির্ভর ও সমৃদ্ধ বাংলাদেশ গড়ে তোলাই
-            আমাদের অভিন্ন লক্ষ্য।"
+          <h3 className="font-display text-3xl md:text-4xl lg:text-5xl leading-[1.15] max-w-3xl mx-auto italic">
+            “একটি দুর্যোগ-সহনশীল, প্রযুক্তিনির্ভর ও সমৃদ্ধ বাংলাদেশ গড়ে তোলাই
+            আমাদের অভিন্ন লক্ষ্য।”
           </h3>
-          <div className="w-12 h-px bg-background/40 mx-auto mt-8" />
-          <p className="text-sm text-background/70 mt-6">
-            অধ্যক্ষ আসাদুল হাবিব দুলু
+          <div className="w-12 h-px bg-accent mx-auto mt-10" />
+          <p className="text-sm text-background/80 mt-6 font-sans-pro tracking-wide">
+            — অধ্যক্ষ আসাদুল হাবিব দুলু
           </p>
         </motion.div>
       </div>

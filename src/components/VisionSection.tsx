@@ -84,13 +84,16 @@ export const VisionSection = () => {
           transition={{ duration: 0.6 }}
           className="max-w-3xl mb-16"
         >
-          <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground mb-3">
-            কর্মপরিকল্পনা
-          </p>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-foreground leading-tight">
-            জাতীয় অগ্রাধিকার ও স্থানীয় প্রতিশ্রুতি
+          <div className="flex items-center gap-3 mb-4">
+            <span className="h-px w-8 bg-accent" />
+            <p className="text-[11px] uppercase tracking-wider-2 gold-accent font-sans-pro">
+              কর্মপরিকল্পনা · Vision
+            </p>
+          </div>
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-display text-foreground leading-[1.05]">
+            জাতীয় <span className="italic">অগ্রাধিকার</span> ও স্থানীয় প্রতিশ্রুতি
           </h2>
-          <div className="w-16 h-0.5 bg-foreground mt-6 mb-6" />
+          <div className="w-16 h-px bg-foreground/40 mt-6 mb-6" />
           <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
             একটি দুর্যোগ-সহনশীল, প্রযুক্তিনির্ভর ও সমৃদ্ধ বাংলাদেশ গড়ার লক্ষ্যে
             গৃহীত নীতিগত অগ্রাধিকার এবং লালমনিরহাট-৩ আসনের জন্য নির্ধারিত
