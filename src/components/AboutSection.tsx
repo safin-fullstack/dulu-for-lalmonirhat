@@ -1,7 +1,7 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { Award, Briefcase, GraduationCap, Landmark, Users2, User, UserCheck, BookOpen } from "lucide-react";
-import candidatePhoto from "@/assets/candidate-photo.jpg";
+import candidatePhoto from "@/assets/minister-portrait.jpg";
 
 const milestones = [
   {
@@ -41,11 +41,14 @@ export const AboutSection = () => {
           transition={{ duration: 0.6 }}
           className="max-w-3xl mb-16"
         >
-          <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground mb-3">পরিচিতি</p>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-foreground leading-tight">
-            একজন রাষ্ট্রনায়কের সংক্ষিপ্ত পরিচয়
+          <div className="flex items-center gap-3 mb-4">
+            <span className="h-px w-8 bg-accent" />
+            <p className="text-[11px] uppercase tracking-wider-2 gold-accent font-sans-pro">পরিচিতি · Profile</p>
+          </div>
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-display text-foreground leading-[1.05]">
+            একজন <span className="italic">রাষ্ট্রনায়কের</span> সংক্ষিপ্ত পরিচয়
           </h2>
-          <div className="w-16 h-0.5 bg-foreground mt-6" />
+          <div className="w-16 h-px bg-foreground/40 mt-6" />
         </motion.div>
 
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-start">
@@ -57,12 +60,14 @@ export const AboutSection = () => {
             className="relative"
           >
             <div className="relative">
+              <div className="absolute -top-3 -left-3 w-full h-full border border-accent/50" />
               <div className="relative overflow-hidden bg-muted shadow-card">
                 <img
                   src={candidatePhoto}
                   alt="অধ্যক্ষ আসাদুল হাবিব দুলু"
-                  className="w-full h-auto object-cover grayscale"
+                  className="w-full h-auto object-cover"
                 />
+                <div className="absolute inset-0 bg-gradient-to-t from-foreground/15 to-transparent" />
               </div>
               <div className="absolute -bottom-6 -right-6 bg-foreground text-background p-6 shadow-lg">
                 <p className="text-3xl md:text-4xl font-display font-bold">৪০+</p>

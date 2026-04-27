@@ -86,13 +86,16 @@ export const AdviceSection = () => {
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.6 }}
           >
-            <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground mb-3">
-              জনগণের কণ্ঠস্বর
-            </p>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-foreground leading-tight">
-              আপনার মতামত আমাদের নীতির ভিত্তি
+            <div className="flex items-center gap-3 mb-4">
+              <span className="h-px w-8 bg-accent" />
+              <p className="text-[11px] uppercase tracking-wider-2 gold-accent font-sans-pro">
+                জনগণের কণ্ঠস্বর · Voice
+              </p>
+            </div>
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-display text-foreground leading-[1.05]">
+              আপনার <span className="italic">মতামত</span> আমাদের নীতির ভিত্তি
             </h2>
-            <div className="w-16 h-0.5 bg-foreground mt-6 mb-8" />
+            <div className="w-16 h-px bg-foreground/40 mt-6 mb-8" />
 
             <div className="space-y-4 text-muted-foreground leading-relaxed mb-10">
               <p>

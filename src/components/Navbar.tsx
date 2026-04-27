@@ -19,15 +19,16 @@ export const Navbar = () => {
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between h-16 md:h-20">
             {/* Identity */}
-            <a href="#home" className="flex items-center gap-3">
+            <a href="#home" className="flex items-center gap-3 group">
+              <div className="w-1 h-10 bg-accent group-hover:h-12 transition-all" />
               <div>
-                <p className="text-sm md:text-base font-bold text-foreground tracking-tight leading-tight">
+                <p className="font-display text-base md:text-lg text-foreground leading-tight">
                   অধ্যক্ষ আসাদুল হাবিব দুলু
                 </p>
-                <p className="text-[10px] md:text-xs text-muted-foreground leading-tight">
-                  মাননীয় মন্ত্রী, দুর্যোগ ব্যবস্থাপনা ও ত্রাণ মন্ত্রণালয়
+                <p className="text-[10px] md:text-[11px] text-muted-foreground leading-tight tracking-wide font-sans-pro">
+                  মাননীয় মন্ত্রী · দুর্যোগ ব্যবস্থাপনা ও ত্রাণ মন্ত্রণালয়
                 </p>
-                <p className="text-[10px] md:text-xs text-muted-foreground leading-tight">
+                <p className="text-[10px] md:text-[11px] gold-accent leading-tight font-sans-pro tracking-wide">
                   সংসদ সদস্য — লালমনিরহাট-৩
                 </p>
               </div>
