@@ -1,14 +1,13 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
-import bnpLogo from "@/assets/bnp-logo.webp";
 
 const navLinks = [
   { name: "হোম", nameEn: "Home", href: "#home" },
   { name: "পরিচয়", nameEn: "About", href: "#about" },
-  { name: "ভিশন", nameEn: "Vision", href: "#vision" },
+  { name: "কর্মপরিকল্পনা", nameEn: "Vision", href: "#vision" },
   { name: "উন্নয়ন", nameEn: "Development", href: "#development" },
-  { name: "পরামর্শ", nameEn: "Advice", href: "#advice" },
+  { name: "মতামত", nameEn: "Advice", href: "#advice" },
 ];
 
 export const Navbar = () => {
@@ -16,18 +15,21 @@ export const Navbar = () => {
 
   return (
     <>
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md shadow-sm">
+      <nav className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-md border-b border-border">
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between h-16 md:h-20">
-            {/* Logo */}
+            {/* Identity */}
             <a href="#home" className="flex items-center gap-3">
-              
               <div>
-                <p className="text-sm font-bold text-primary ms-3">অধ্যক্ষ আসাদুল
-হাবিব দুলু</p>
-
-<p className="text-xs text-muted-foreground ms-3">দুর্যোগ ব্যবস্থাপনা ও ত্রাণ মন্ত্রী</p>
-                <p className="text-xs text-muted-foreground ms-3">সংসদীয় আসন - লালমনিরহাট ৩</p>
+                <p className="text-sm md:text-base font-bold text-foreground tracking-tight leading-tight">
+                  অধ্যক্ষ আসাদুল হাবিব দুলু
+                </p>
+                <p className="text-[10px] md:text-xs text-muted-foreground leading-tight">
+                  মাননীয় মন্ত্রী, দুর্যোগ ব্যবস্থাপনা ও ত্রাণ মন্ত্রণালয়
+                </p>
+                <p className="text-[10px] md:text-xs text-muted-foreground leading-tight">
+                  সংসদ সদস্য — লালমনিরহাট-৩
+                </p>
               </div>
             </a>
 
@@ -37,10 +39,10 @@ export const Navbar = () => {
                 <a
                   key={link.href}
                   href={link.href}
-                  className="text-foreground/80 hover:text-primary font-medium transition-colors duration-200 relative group"
+                  className="text-foreground/70 hover:text-foreground font-medium transition-colors duration-200 relative group"
                 >
                   {link.name}
-                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full" />
+                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-foreground transition-all duration-300 group-hover:w-full" />
                 </a>
               ))}
             </div>
@@ -64,7 +66,7 @@ export const Navbar = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="md:hidden fixed inset-0 top-16 bg-white z-40"
+            className="md:hidden fixed inset-0 top-16 bg-background z-40"
           >
             <div className="flex flex-col items-center justify-center h-full space-y-6">
               {navLinks.map((link) => (
@@ -72,7 +74,7 @@ export const Navbar = () => {
                   key={link.href}
                   href={link.href}
                   onClick={() => setIsOpen(false)}
-                  className="py-3 px-6 text-xl font-medium text-foreground hover:text-primary transition-colors"
+                  className="py-3 px-6 text-xl font-medium text-foreground hover:text-muted-foreground transition-colors"
                 >
                   {link.name}
                 </a>

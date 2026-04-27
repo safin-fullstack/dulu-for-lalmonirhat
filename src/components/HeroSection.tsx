@@ -1,185 +1,153 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { ChevronDown, MessageCircle, Heart, Award, Users, Trophy } from "lucide-react";
+import { ChevronDown, MessageCircle, ArrowRight } from "lucide-react";
 import candidatePhoto from "@/assets/candidate-photo.jpg";
-import bnpLogo from "@/assets/bnp-logo.webp";
 
 export const HeroSection = () => {
   return (
     <section
       id="home"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16"
-      style={{
-        background: 'linear-gradient(135deg, #006A4E 0%, #008B5E 50%, #F42A41 100%)'
-      }}
+      className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20 bg-background"
     >
-      {/* Victory Celebration Elements */}
-      <div className="absolute inset-0 overflow-hidden">
-        {/* Floating particles */}
-       
-        
-        {/* Victory ribbons */}
-  
-      </div>
+      {/* Subtle grid background */}
+      <div className="absolute inset-0 pattern-bg opacity-60" />
 
-      {/* Decorative pattern */}
-      <div className="absolute inset-0 opacity-10">
-        <div className="absolute top-20 left-10 w-32 h-32 border-4 border-white/40 rounded-full" />
-        <div className="absolute bottom-40 right-20 w-24 h-24 border-4 border-yellow-400/40 rounded-full" />
-        <div className="absolute top-1/3 right-1/4 w-16 h-16 bg-yellow-400/20 rotate-45" />
-      </div>
+      {/* Soft top accent line */}
+      <div className="absolute top-20 left-0 right-0 official-divider" />
 
       <div className="container mx-auto px-4 py-12 md:py-20 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Text Content */}
           <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            animate={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="text-white text-center lg:text-left order-2 lg:order-1"
+            className="text-center lg:text-left order-2 lg:order-1"
           >
-            {/* Victory Badge */}
+            {/* Official designation */}
             <motion.div
-              initial={{ scale: 0 }}
-              animate={{ scale: 1 }}
-              transition={{ type: "spring", stiffness: 200, damping: 20 }}
-              className="inline-flex items-center gap-2 bg-yellow-400 text-green-900 px-4 py-2 rounded-full mb-6"
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.2 }}
+              className="inline-flex items-center gap-2 border border-foreground/20 px-4 py-1.5 rounded-full mb-6"
             >
-             
-              <span className="font-bold">মাননীয় মন্ত্রী দুর্যোগ ব্যবস্থাপনা ও ত্রাণ মন্ত্রণালয় </span>
+              <span className="w-1.5 h-1.5 bg-foreground rounded-full" />
+              <span className="text-xs md:text-sm font-medium text-foreground tracking-wide">
+                গণপ্রজাতন্ত্রী বাংলাদেশ সরকার
+              </span>
             </motion.div>
 
-           
+            <motion.p
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.3 }}
+              className="text-sm md:text-base text-muted-foreground font-medium mb-3 tracking-wide uppercase"
+            >
+              মাননীয় মন্ত্রী
+            </motion.p>
 
             <motion.h1
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4, duration: 0.6 }}
-              className="text-4xl md:text-5xl lg:text-7xl font-display font-bold mb-2 leading-tight"
+              className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-display font-bold text-foreground mb-4 leading-[1.1]"
             >
               অধ্যক্ষ আসাদুল
               <br />
-              <span className="text-yellow-300">হাবিব দুলু</span>
+              হাবিব দুলু
             </motion.h1>
 
-            <motion.p
+            <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.5 }}
-              className="text-xl md:text-2xl text-white/90 mb-4"
+              className="space-y-1 mb-8"
             >
-              Asadul Habib Dulu
-            </motion.p>
+              <p className="text-base md:text-lg text-foreground/80 font-medium">
+                দুর্যোগ ব্যবস্থাপনা ও ত্রাণ মন্ত্রণালয়
+              </p>
+              <p className="text-sm md:text-base text-muted-foreground">
+                সংসদ সদস্য — লালমনিরহাট-৩ আসন
+              </p>
+            </motion.div>
 
             <motion.p
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.6 }}
-              className="text-lg md:text-xl text-white/80 mb-8 max-w-lg mx-auto lg:mx-0"
+              className="text-base md:text-lg text-muted-foreground mb-10 max-w-xl mx-auto lg:mx-0 leading-relaxed border-l-2 border-foreground/30 pl-4 italic"
             >
-              জনগণের আস্থা, জনগণের বিজয়
-              <br />
-              <span className="text-yellow-300 font-semibold text-2xl">
-                "আলোকিত লালমনিরহাট গড়ার অঙ্গীকার"
-              </span>
+              "জনগণের সেবা, জাতির কল্যাণ এবং সর্বোপরি একটি দুর্যোগ-সহনশীল
+              বাংলাদেশ গড়ার অঙ্গীকার।"
             </motion.p>
 
-           <motion.div
+            <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.7 }}
               className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
             >
               <a href="#advice">
-                <Button variant="hero" size="xl" className="group">
-                  <MessageCircle className="group-hover:animate-pulse" />
-                  পরামর্শ দিন
+                <Button variant="default" size="xl" className="group bg-foreground text-background hover:bg-foreground/90">
+                  <MessageCircle className="w-4 h-4" />
+                  মতামত পাঠান
                 </Button>
               </a>
               <a href="#vision">
-                <Button variant="heroOutline" size="xl">
-                  
-                  আলোকিত লালমনিরহাট
+                <Button variant="outline" size="xl" className="border-foreground text-foreground hover:bg-foreground hover:text-background group">
+                  কর্মপরিকল্পনা
+                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </Button>
               </a>
             </motion.div>
 
+            {/* Stats */}
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.9 }}
-              className="mt-12 grid grid-cols-2 md:grid-cols-4 gap-4 justify-center lg:justify-start my-4"
+              className="mt-12 grid grid-cols-3 gap-6 max-w-lg mx-auto lg:mx-0"
             >
-              <div className="text-center bg-white/10 backdrop-blur-sm rounded-lg p-3">
-                <p className="text-2xl font-bold text-yellow-300">140000 +</p>
-                <p className="text-xs text-white/80">ভোট </p>
+              <div className="text-center lg:text-left">
+                <p className="text-2xl md:text-3xl font-display font-bold text-foreground">৪০+</p>
+                <p className="text-xs text-muted-foreground mt-1">বছরের রাজনৈতিক অভিজ্ঞতা</p>
               </div>
-              <div className="text-center bg-white/10 backdrop-blur-sm rounded-lg p-3">
-                <p className="text-2xl font-bold text-yellow-300">৪০+</p>
-                <p className="text-xs text-white/80">বছরের অভিজ্ঞতা</p>
+              <div className="text-center lg:text-left border-l border-r border-border px-4">
+                <p className="text-2xl md:text-3xl font-display font-bold text-foreground">১৫০+</p>
+                <p className="text-xs text-muted-foreground mt-1">উন্নয়ন প্রকল্প</p>
               </div>
-              <div className="text-center bg-white/10 backdrop-blur-sm rounded-lg p-3">
-                <p className="text-2xl font-bold text-yellow-300">১৫০+</p>
-                <p className="text-xs text-white/80">উন্নয়ন প্রকল্প</p>
+              <div className="text-center lg:text-left">
+                <p className="text-2xl md:text-3xl font-display font-bold text-foreground">৩.৭ লক্ষ</p>
+                <p className="text-xs text-muted-foreground mt-1">নাগরিকের প্রতিনিধি</p>
               </div>
-              
             </motion.div>
           </motion.div>
 
-          {/* Candidate Image with Victory Theme */}
+          {/* Official Portrait */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
+            initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.3 }}
             className="relative flex justify-center order-1 lg:order-2"
           >
             <div className="relative">
-              {/* Victory rings */}
-              <motion.div
-                animate={{ rotate: 360 }}
-                transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-                className="absolute inset-0 -m-12 border-4 border-yellow-400/30 rounded-full border-t-yellow-400 border-r-transparent border-b-transparent border-l-transparent"
-              />
-              <motion.div
-                animate={{ rotate: -360 }}
-                transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
-                className="absolute inset-0 -m-8 border-4 border-white/30 rounded-full border-b-white border-l-transparent border-r-transparent border-t-transparent"
-              />
+              {/* Frame accent */}
+              <div className="absolute -top-3 -left-3 w-20 h-20 border-l-2 border-t-2 border-foreground" />
+              <div className="absolute -bottom-3 -right-3 w-20 h-20 border-r-2 border-b-2 border-foreground" />
 
-              {/* Main image container */}
-              <div className="relative w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 rounded-full overflow-hidden border-8 border-yellow-400 shadow-2xl">
+              {/* Main image - portrait frame */}
+              <div className="relative w-72 h-80 md:w-80 md:h-96 lg:w-96 lg:h-[28rem] overflow-hidden bg-muted shadow-hero">
                 <img
                   src={candidatePhoto}
-                  alt="আসাদুল হাবিব দুলু"
-                  className="w-full h-full object-cover object-top"
+                  alt="অধ্যক্ষ আসাদুল হাবিব দুলু"
+                  className="w-full h-full object-cover object-top grayscale hover:grayscale-0 transition-all duration-700"
                 />
+                {/* Bottom plaque */}
+                <div className="absolute bottom-0 left-0 right-0 bg-foreground text-background px-5 py-3">
+                  <p className="text-xs uppercase tracking-widest text-background/70">Hon'ble Minister</p>
+                  <p className="text-sm font-semibold">Asadul Habib Dulu</p>
+                </div>
               </div>
-
-              {/* Victory badges */}
-              <motion.div
-                animate={{ 
-                  scale: [1, 1.1, 1],
-                  rotate: [0, 5, -5, 0]
-                }}
-                transition={{ duration: 2, repeat: Infinity }}
-                className="absolute -top-4 -right-4 bg-yellow-400 text-green-900 px-6 py-3 rounded-full font-bold text-lg shadow-xl flex items-center gap-2"
-              >
-                <Trophy className="w-5 h-5" />
-                মাননীয় মন্ত্রী
-              </motion.div>
-
-              <motion.div
-                animate={{ 
-                  scale: [1, 1.2, 1],
-                }}
-                transition={{ duration: 2, repeat: Infinity, delay: 0.5 }}
-                className="absolute -bottom-4 -left-4 bg-white text-green-900 px-4 py-2 rounded-full font-bold shadow-xl"
-              >
-                ধানের শীষ 🌾
-              </motion.div>
-
-              {/* Floating celebration elements */}
-              
             </div>
           </motion.div>
         </div>
@@ -187,17 +155,15 @@ export const HeroSection = () => {
         {/* Scroll indicator */}
         <motion.div
           initial={{ opacity: 0 }}
-          animate={{ opacity: 1, y: [0, 10, 0] }}
-          transition={{ delay: 1.2, duration: 1.5, repeat: Infinity }}
-          className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
+          animate={{ opacity: 1, y: [0, 8, 0] }}
+          transition={{ delay: 1.2, duration: 2, repeat: Infinity }}
+          className="absolute bottom-8 left-1/2 transform -translate-x-1/2 hidden md:block"
         >
-          <a href="#about" className="text-white/60 hover:text-white transition-colors">
-            <ChevronDown size={32} />
+          <a href="#about" className="text-muted-foreground hover:text-foreground transition-colors">
+            <ChevronDown size={28} />
           </a>
         </motion.div>
       </div>
-
-     
     </section>
   );
 };
