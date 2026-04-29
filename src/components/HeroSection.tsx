@@ -37,7 +37,7 @@ export const HeroSection = () => {
             >
               <span className="h-px w-10 bg-foreground/40" />
               <span className="text-[10px] md:text-xs font-sans-pro tracking-wider-2 text-foreground/70 uppercase">
-                Government of the People's Republic of Bangladesh
+                Hon'ble Minister · মাননীয় মন্ত্রী
               </span>
             </motion.div>
 
