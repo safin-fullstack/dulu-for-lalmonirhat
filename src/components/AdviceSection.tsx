@@ -20,7 +20,7 @@ export const AdviceSection = () => {
   const [isSubmitted, setIsSubmitted] = useState(false);
 
   const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
@@ -196,26 +196,17 @@ export const AdviceSection = () => {
                     >
                       এলাকা *
                     </label>
-                    <select
+                    <input
+                      type="text"
                       id="area"
                       name="area"
                       required
+                      maxLength={150}
                       value={formData.area}
                       onChange={handleChange}
-                      className="w-full px-0 py-3 bg-transparent border-0 border-b border-border focus:outline-none focus:border-foreground text-foreground transition-colors"
-                    >
-                      <option value="">এলাকা নির্বাচন করুন</option>
-                      <option value="lalmonirhat-sadar">লালমনিরহাট সদর</option>
-                      <option value="moghalhat">মোগলহাট</option>
-                      <option value="kulaghat">কুলাঘাট</option>
-                      <option value="barobari">বড়বাড়ী</option>
-                      <option value="mohendronogor">মহেন্দ্রনগর</option>
-                      <option value="harati">হারাটি</option>
-                      <option value="khuniagach">খুনিয়াগাছ</option>
-                      <option value="rajpur">রাজপুর</option>
-                      <option value="gokunda">গোকুন্ডা</option>
-                      <option value="panchagram">পঞ্চগ্রাম</option>
-                    </select>
+                      placeholder="আপনার এলাকার নাম লিখুন (গ্রাম/ইউনিয়ন/উপজেলা)"
+                      className="w-full px-0 py-3 bg-transparent border-0 border-b border-border focus:outline-none focus:border-foreground text-foreground placeholder:text-muted-foreground/60 transition-colors"
+                    />
                   </div>
 
                   <div>
