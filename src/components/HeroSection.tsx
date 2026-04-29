@@ -13,11 +13,6 @@ export const HeroSection = () => {
       <div className="absolute inset-0 noise-bg opacity-[0.05] pointer-events-none" />
 
       {/* Editorial corner marks */}
-      <div className="absolute top-24 left-6 md:left-10 hidden md:block">
-        <p className="text-[10px] tracking-wider-2 text-muted-foreground rotate-180" style={{writingMode:'vertical-rl'}}>
-          MINISTRY · GOVT. OF BANGLADESH
-        </p>
-      </div>
       <div className="absolute top-24 right-6 md:right-10 hidden md:block">
         <p className="text-[10px] tracking-wider-2 text-muted-foreground" style={{writingMode:'vertical-rl'}}>
           EST. 2024 · DHAKA
