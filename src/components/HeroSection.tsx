@@ -13,11 +13,6 @@ export const HeroSection = () => {
       <div className="absolute inset-0 noise-bg opacity-[0.05] pointer-events-none" />
 
       {/* Editorial corner marks */}
-      <div className="absolute top-24 left-6 md:left-10 hidden md:block">
-        <p className="text-[10px] tracking-wider-2 text-muted-foreground rotate-180" style={{writingMode:'vertical-rl'}}>
-          MINISTRY · GOVT. OF BANGLADESH
-        </p>
-      </div>
       <div className="absolute top-24 right-6 md:right-10 hidden md:block">
         <p className="text-[10px] tracking-wider-2 text-muted-foreground" style={{writingMode:'vertical-rl'}}>
           EST. 2024 · DHAKA
@@ -42,7 +37,7 @@ export const HeroSection = () => {
             >
               <span className="h-px w-10 bg-foreground/40" />
               <span className="text-[10px] md:text-xs font-sans-pro tracking-wider-2 text-foreground/70 uppercase">
-                Government of the People's Republic of Bangladesh
+                Hon'ble Minister · মাননীয় মন্ত্রী
               </span>
             </motion.div>
 
