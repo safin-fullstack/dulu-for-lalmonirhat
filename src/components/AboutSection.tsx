@@ -1,7 +1,7 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { Award, Briefcase, GraduationCap, Landmark, Users2, User, UserCheck, BookOpen } from "lucide-react";
-import candidatePhoto from "@/assets/minister-portrait.jpg";
+import candidatePhoto from "@/assets/minister-rally.jpg";
 
 const milestones = [
   {
