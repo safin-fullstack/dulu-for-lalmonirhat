@@ -1,4 +1,4 @@
-import { Mail, Phone, MapPin } from "lucide-react";
+import { MapPin } from "lucide-react";
 
 export const Footer = () => {
   return (
@@ -15,8 +15,6 @@ export const Footer = () => {
             </h3>
             <p className="text-sm text-background/70 leading-relaxed">
               দুর্যোগ ব্যবস্থাপনা ও ত্রাণ মন্ত্রণালয়
-              <br />
-              গণপ্রজাতন্ত্রী বাংলাদেশ সরকার
             </p>
             <div className="w-12 h-px bg-background/40 mt-6" />
             <p className="text-xs text-background/50 mt-4">
@@ -62,21 +60,6 @@ export const Footer = () => {
                   বাংলাদেশ সচিবালয়, ঢাকা
                 </span>
               </li>
-              <li className="flex items-center gap-3">
-                <Phone className="w-4 h-4 flex-shrink-0" />
-                <a href="tel:+8809678300300" className="hover:text-background transition-colors">
-                  ০৯৬৭৮-৩০০৩০০
-                </a>
-              </li>
-              <li className="flex items-center gap-3">
-                <Mail className="w-4 h-4 flex-shrink-0" />
-                <a
-                  href="mailto:office@modmr.gov.bd"
-                  className="hover:text-background transition-colors"
-                >
-                  office@modmr.gov.bd
-                </a>
-              </li>
             </ul>
           </div>
         </div>
@@ -85,9 +68,6 @@ export const Footer = () => {
         <div className="mt-16 pt-8 border-t border-background/15 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-xs text-background/50">
             © {new Date().getFullYear()} অধ্যক্ষ আসাদুল হাবিব দুলু — দাপ্তরিক ওয়েবসাইট। সর্বস্বত্ব সংরক্ষিত।
-          </p>
-          <p className="text-xs text-background/50">
-            গণপ্রজাতন্ত্রী বাংলাদেশ সরকার
           </p>
         </div>
       </div>
