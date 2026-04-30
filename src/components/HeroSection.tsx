@@ -41,15 +41,6 @@ export const HeroSection = () => {
               </span>
             </motion.div>
 
-            <motion.p
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.3 }}
-              className="text-sm md:text-base gold-accent font-sans-pro font-medium mb-4 tracking-[0.2em] uppercase"
-            >
-              Hon'ble Minister · মাননীয় মন্ত্রী
-            </motion.p>
-
             <motion.h1
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
